@@ -6,13 +6,13 @@
 namespace transit {
 
     StationId StationIndex::idFor( std::string name ) {
-        if ( auto it = ids_.find( std::string( name )); it != ids_.end() ) {
+        if ( auto it = ids_.find(name); it != ids_.end() ) {
             return it->second;
         }
 
         const StationId id = names_.size();
-        names_.push_back( name );
-        ids_.emplace( std::move( name ), id );
+        ids_.emplace( name, id );
+        names_.push_back( std::move(name ));
         return id;
     }
 

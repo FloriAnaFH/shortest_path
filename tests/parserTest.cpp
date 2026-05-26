@@ -2,6 +2,7 @@
 
 #include <cassert>
 #include <stdexcept>
+#include <iostream>
 
 namespace {
 
@@ -26,7 +27,7 @@ namespace {
     void rejectNonPositiveWeight() {
         bool thrown = false;
         try {
-            static_cast<void> (transit::Parser( R"(U1 "A" 0 "B")" ).parse( 1 ));
+            static_cast<void> (transit::Parser( R"(U1: "A" 0 "B")" ).parse( 1 ));
 
         } catch ( const std::runtime_error& ) {
             thrown = true;
@@ -39,4 +40,5 @@ namespace {
         testValidRoute();
         rejectMissingColon();
         rejectNonPositiveWeight();
+    std::cout << "All tests passed!\n";
     }
