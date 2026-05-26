@@ -1,6 +1,5 @@
-#include "../include/transit/parser.hpp"
-
-#include "../include/transit/stringUtils.hpp"
+#include "parser.hpp"
+#include "stringUtils.hpp"
 
 #include <cctype>
 #include <limits>

@@ -1,7 +1,6 @@
-#include "../include/transit/application.hpp"
-
-#include "../include/transit/output.hpp"
-#include "../include/transit/transportNetwork.hpp"
+#include "application.hpp"
+#include "output.hpp"
+#include "transportNetwork.hpp"
 
 #include <iostream>
 #include <optional>
@@ -17,13 +16,13 @@ namespace transit {
             return 0;
         }
 
-        if ( argc == 3 && std::string_view( argv[1] ) == "--sumary" ) {
+        if ( argc == 3 && std::string_view( argv[1] ) == "--summary" ) {
             const auto network = TransportNetwork::fromFile( argv[2] );
             printSummary( std::cout, network );
             return 0;
         }
 
-        if ( argc == 3 || argc == 4  && std::string_view( argv[1] ) == "--list-stations" ) {
+        if ( (argc == 3 || argc == 4 ) && std::string_view( argv[1] ) == "--list-stations" ) {
             const auto network = TransportNetwork::fromFile( argv[2] );
             std::optional<std::string_view> filter;
             if ( argc == 4 ) {

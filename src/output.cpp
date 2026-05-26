@@ -1,7 +1,5 @@
-#include "../include/transit/output.hpp"
-
-#include "../include/transit/stringUtils.hpp"
-
+#include "output.hpp"
+#include "stringUtils.hpp"
 #include <iostream>
 
 namespace transit {
@@ -11,21 +9,22 @@ namespace transit {
         for ( const Step& step : steps ) {
             if ( !legs.empty() && legs.back().line == step.line ) {
                 legs.back().to = step.to;
-                legs.back().minutes = step.minutes;
+                legs.back().minutes += step.minutes;
                 ++legs.back().segments;
             } else {
-                legs.push_back( CompactLeg{ step.line, step.from, step.to, step.minutes } );
+                legs.emplace_back(CompactLeg{step.line, step.from, step.to, step.minutes});
+                legs.back().segments = 1;
             }
         }
         return legs;
     }
 
-   void printSummary( std::ostream& out, const TransportNetwork& network ) {
-       out  << "Netork loaded successfully\n"
-            << "Routes: " << network.routeCount() << "\n"
-            << "Stations " << network.stationCount() << "\n"
-            << "Segments: " << network.segmentCount() << "\n";
-   }
+    void printSummary(std::ostream &out, const TransportNetwork &network) {
+        out << "Network loaded successfully\n"
+                << "Routes: " << network.routeCount() << "\n"
+                << "Stations " << network.stationCount() << "\n"
+                << "Segments: " << network.segmentCount() << "\n";
+    }
 
    void printRoute( std::ostream& out, const Result& result ) {
        out << "Shortest path: " << result.total_minutes << " minutes\n";

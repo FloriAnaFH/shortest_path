@@ -1,4 +1,4 @@
-#include "../include/transit/application.hpp"
+#include "application.hpp"
 
 #include <exception>
 #include <iostream>
