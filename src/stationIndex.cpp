@@ -1,4 +1,4 @@
-#include "../include/transit/stationIndex.hpp"
+#include "stationIndex.hpp"
 
 #include <algorithm>
 #include <utility>

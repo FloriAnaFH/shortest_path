@@ -1,7 +1,5 @@
-#include "../include/transit/output.hpp"
-
-#include "../include/transit/stringUtils.hpp"
-
+#include "output.hpp"
+#include "stringUtils.hpp"
 #include <iostream>
 
 namespace transit {

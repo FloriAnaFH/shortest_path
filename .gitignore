@@ -1,0 +1,19 @@
+# Mac
+.DS_Store
+
+# Linux
+*~
+.nfs*
+
+# CLion
+.idea/
+
+# CMake Build-Ordner
+cmake-build-debug/
+cmake-build-release/
+build/
+
+ # Kompilierte Dateien
+ *.o
+ *.a
+ *.out

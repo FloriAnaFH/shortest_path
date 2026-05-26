@@ -1,7 +1,6 @@
-#include "../include/transit/transportNetwork.hpp"
-
-#include "../include/transit/parser.hpp"
-#include "../include/transit/stringUtils.hpp"
+#include "transportNetwork.hpp"
+#include "parser.hpp"
+#include "stringUtils.hpp"
 
 #include <algorithm>
 #include <fstream>
@@ -11,7 +10,6 @@
 #include <stdexcept>
 #include <string>
 #include <utility>
-
 
 namespace transit {
 
@@ -79,7 +77,7 @@ namespace transit {
         std::vector<int> distance( stationCount(), infinity );
         std::vector<std::optional<Previous>> previous( stationCount() );
 
-        using QueueEntry = std::pair<int, StationId>;\
+        using QueueEntry = std::pair<int, StationId>;
         std::priority_queue<QueueEntry,std::vector<QueueEntry>, std::greater<>> queue;
 
         distance[*start] = 0;

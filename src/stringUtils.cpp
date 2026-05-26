@@ -1,4 +1,4 @@
-#include "../include/transit/stringUtils.hpp"
+#include "stringUtils.hpp"
 
 #include <algorithm>
 #include <cctype>

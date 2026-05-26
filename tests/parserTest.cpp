@@ -1,4 +1,4 @@
-#include "../include/transit/parser.hpp"
+#include "parser.hpp"
 
 #include <cassert>
 #include <stdexcept>

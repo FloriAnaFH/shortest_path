@@ -1,7 +1,6 @@
-#include "../include/transit/application.hpp"
-
-#include "../include/transit/output.hpp"
-#include "../include/transit/transportNetwork.hpp"
+#include "application.hpp"
+#include "output.hpp"
+#include "transportNetwork.hpp"
 
 #include <iostream>
 #include <optional>
